@@ -1,31 +1,46 @@
-﻿namespace Savage
+﻿using System;
+
+namespace Savage.Measurements
 {
     public class Distance
     {
-        private Distance(double meters)
+        public readonly double Value;
+        public readonly UnitsOfMeasure.Distances UnitOfMeasure;
+
+        public Distance(double value, UnitsOfMeasure.Distances unitOfMeasure)
         {
-            _meters = meters;
+            Value = value;
+            UnitOfMeasure = unitOfMeasure;
         }
 
-        public static Distance NewFromMeters(double meters)
+        public Distance Convert(UnitsOfMeasure.Distances convertingTo)
         {
-            return new Distance(meters);
+            var meters = UnitOfMeasure == UnitsOfMeasure.Distances.Meters ? Value : GetDistanceConverter(UnitOfMeasure).ToMeters(Value);
+
+            if (convertingTo == UnitsOfMeasure.Distances.Meters)
+                return new Distance(meters, UnitsOfMeasure.Distances.Meters);
+            
+            var convertor = GetDistanceConverter(convertingTo);
+            return new Distance(convertor.FromMeters(meters), convertingTo);
         }
 
-        private readonly double _meters;
-
-        public double Meters => _meters;
-
-        public double Kilometers => _meters / 1000;
-
-        public static double ConvertMilesToKilometers(double miles)
+        private Converters.IDistanceConverter GetDistanceConverter(UnitsOfMeasure.Distances unitOfMeasure)
         {
-            return miles * 1.609344;
-        }
-
-        public static double ConvertKilometersToMiles(double kilometers)
-        {
-            return kilometers * 0.621371192;
+            switch (unitOfMeasure)
+            {
+                case UnitsOfMeasure.Distances.Feet:
+                    return new Converters.Distances.Feet();
+                case UnitsOfMeasure.Distances.Kilometers:
+                    return new Converters.Distances.Kilometers();
+                case UnitsOfMeasure.Distances.Meters:
+                    return null;
+                case UnitsOfMeasure.Distances.Miles:
+                    return new Converters.Distances.Miles();
+                case UnitsOfMeasure.Distances.Yards:
+                    return new Converters.Distances.Yards();
+                default:
+                    throw new NotImplementedException(nameof(unitOfMeasure));
+            }
         }
     }
 }
