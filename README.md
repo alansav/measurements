@@ -1,6 +1,6 @@
 # Measurements
 
-This project is a .NET Core class library.
+This project is a .NET Standard 2.0 class library.
 
 This project is designed to aid developers when working with units of measurements.
 
