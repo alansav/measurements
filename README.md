@@ -1,5 +1,7 @@
 # Measurements
 
+[![Build status](https://ci.appveyor.com/api/projects/status/huxm5nkp0kvvn9vs?svg=true)](https://ci.appveyor.com/project/alansav/measurements)
+
 This project is a .NET Standard 2.0 class library.
 
 This project is designed to aid developers when working with units of measurements.
