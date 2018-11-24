@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Measurements", "Measurements\Measurements.csproj", "{49771AF7-D6DC-4E0F-B0CB-C6A9631AE3A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Savage.Measurements", "Savage.Measurements\Savage.Measurements.csproj", "{49771AF7-D6DC-4E0F-B0CB-C6A9631AE3A3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{7973D9C7-16DE-4328-81C7-A79047EF3120}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Savage.Measurements.UnitTests", "Savage.Measurements.UnitTests\Savage.Measurements.UnitTests.csproj", "{7973D9C7-16DE-4328-81C7-A79047EF3120}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
