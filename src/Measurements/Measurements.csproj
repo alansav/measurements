@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <VersionPrefix>1.2.0</VersionPrefix>
     <TargetFrameworks>netstandard2.0;net45;net46;</TargetFrameworks>
     <Title>Measurements</Title>
     <Authors>Alan Savage</Authors>
@@ -10,6 +9,14 @@
     <PackageProjectUrl>https://github.com/alansav/measurements</PackageProjectUrl>
     <RepositoryUrl>https://github.com/alansav/measurements</RepositoryUrl>
     <PackageTags>Measurements;Distance;Conversion</PackageTags>
+    <PackageId>Measurements</PackageId>
+    <Product>Savage.Measurements</Product>
+    <!-- Version elements are intentionally empty as they are provided by the build process-->
+    <Version></Version>
+    <PackageVersion></PackageVersion>
+    <AssemblyVersion></AssemblyVersion>
+    <FileVersion></FileVersion>
+    <InformationalVersion></InformationalVersion>
   </PropertyGroup>
 
 </Project>
